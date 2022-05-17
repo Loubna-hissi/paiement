@@ -108,7 +108,19 @@ body {
     cursor: pointer;
     background: var(--color-primary);
 }
-
+.btnfontpetit{
+	 width: 90%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    margin: 12px 30px;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
 .form__button:hover {
     background: var(--color-primary-dark);
 }
@@ -145,5 +157,4 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
-
   

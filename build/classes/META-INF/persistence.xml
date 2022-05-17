@@ -4,9 +4,9 @@
 		<class>com.abonnement.bean.CardBean</class>
 		<class>com.abonnement.bean.LoginAgent</class>
 		<class>com.abonnement.bean.LoginBean</class><properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11470398" />
-			<property name="javax.persistence.jdbc.user" value="sql11470398" />
-			<property name="javax.persistence.jdbc.password" value="DVPV3g8llE" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11492831" />
+			<property name="javax.persistence.jdbc.user" value="sql11492831" />
+			<property name="javax.persistence.jdbc.password" value="WWwFms5mIi" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="eclipselink.logging.level" value="FINE" />
 			<property name="eclipselink.ddl-generation" value="create-tables" />

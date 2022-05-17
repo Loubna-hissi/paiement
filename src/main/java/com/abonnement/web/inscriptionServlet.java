@@ -30,6 +30,10 @@ public class inscriptionServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 HttpSession session1 = request.getSession( true );
+		session1.setAttribute( "messageEreur",0);
+		session1.setAttribute( "login",null);
+		session1.setAttribute( "password",null);
 		response.sendRedirect("inscription.jsp");
 	}
 
@@ -37,6 +41,7 @@ public class inscriptionServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		   
 		String username=request.getParameter("name");
 		String password1=request.getParameter("password1");
 		String passwordconf=request.getParameter("passwordconf");
@@ -52,6 +57,12 @@ public class inscriptionServlet extends HttpServlet {
 		loginBean.setMontant(random_int);
 		LoginDao loginDao = new LoginDao();
 		if(!loginDao.ValidateInscription(loginBean) && loginDao.validatpasswords(password1, passwordconf))
+		{
+			session4.setAttribute( "messageInscription", 0);
+			loginDao.ajouterUtilisateur(loginBean);
+			response.sendRedirect("inscription.jsp");
+			
+		}else if(!loginDao.ValidateInscription(loginBean) && loginDao.validatpasswords(password1, passwordconf) && request.getParameter("se_connecter")!=null)
 		{
 			session4.setAttribute( "messageInscription", 0);
 			loginDao.ajouterUtilisateur(loginBean);

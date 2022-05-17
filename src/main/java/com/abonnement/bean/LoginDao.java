@@ -31,7 +31,10 @@ import javax.persistence.TypedQuery;
 import com.abonnement.util.JPAUtil;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.CMYKColor;
 import com.itextpdf.text.pdf.PdfDocument;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -155,13 +158,14 @@ public class LoginDao {
  	public void recuCreatin(LoginBean loginBean,String masterPath) {
 		Document dc = new Document();
 		try {
+			Font blue =FontFactory.getFont(FontFactory.COURIER,14,Font.BOLD,new CMYKColor(255,0,0,0));
 			PdfWriter.getInstance(dc, new FileOutputStream(masterPath));
 			dc.open();
-			dc.add(new Paragraph("********Reçu De Paiement Téléphonique*********"));
+			dc.add(new Paragraph("Reçu De Paiement Téléphonique",blue));
 			dc.add(new Paragraph("--------------------------------------"));
 			dc.add(new Paragraph("A Mr/M :"+loginBean.getLogin()));
-			dc.add(new Paragraph("Bienvenu Mr/M :"+loginBean.getLogin()+"Votre paiement a été effectuer avec succès"));
-			dc.add(new Paragraph("vous avez payé un montant de :"+loginBean.getMontant()));
+			dc.add(new Paragraph("Bienvenu Mr/M : "+loginBean.getLogin()+" votre paiement a été effectuer avec succès"));
+			dc.add(new Paragraph("vous avez payé un montant de :"+loginBean.getMontant()+"DH"));
 			dc.add(new Paragraph("--------------------------------------"));
 			dc.close();
 			
@@ -203,7 +207,7 @@ public class LoginDao {
 			         
 			            Multipart multipartstp = new MimeMultipart();
 			            
-			            messageBodyPart1.setText("Salut Mr/M :"+loginBean.getLogin()+"Votre Paiement est échoué  puisque votre solde est insuffisant ! \n Abientôt");//here you can write a msg what you want to send... just remove String parameter in alertByEmail method oherwise call parameter
+			            messageBodyPart1.setText("Salut Mr/M : "+ loginBean.getLogin()+" Votre Paiement est échoué  puisque votre solde est insuffisant ! \n Abientôt");//here you can write a msg what you want to send... just remove String parameter in alertByEmail method oherwise call parameter
 			        
 			            multipartstp.addBodyPart(messageBodyPart1);        
 			            message.setContent(multipartstp);
@@ -248,10 +252,10 @@ public class LoginDao {
 				            MimeBodyPart messageBodyPart1 = new MimeBodyPart();
 				            MimeBodyPart messageBodyPart2 = new MimeBodyPart();
 				            Multipart multipartstp = new MimeMultipart();
-				            String fileName = "attachmentName.pdf";
+				            String fileName = "reçu.pdf";
 				            DataSource source = new FileDataSource(file);
 				            
-				            messageBodyPart1.setText("Salut Mr/M :"+loginBean.getLogin()+" Votre Paiement a été effectué avec succès !");//here you can write a msg what you want to send... just remove String parameter in alertByEmail method oherwise call parameter
+				            messageBodyPart1.setText("Salut Mr/M :" +loginBean.getLogin()+ " votre paiement a été effectué avec succès !");//here you can write a msg what you want to send... just remove String parameter in alertByEmail method oherwise call parameter
 				            messageBodyPart2.setDataHandler(new DataHandler(source));
 				            messageBodyPart2.setFileName(fileName);
 				             

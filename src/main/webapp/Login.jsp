@@ -37,7 +37,7 @@
         <p class="form__text">
          </p>
          <fmt:message key="Inscription" var="Inscription" />  
-         <a href="inscription" style="text-decoration:none;color:red;text-size:bold">${Inscription}</a>
+         <a href="inscription" style="text-decoration:none;color:green;text-size:bold" name="hrefinscription">${Inscription}</a>
          <fmt:message key="MessageEreurtest" var="MessageEreurtest" />  
         <c:set var = "messageEreur" scope = "session" value = "${messageEreur}"/>
         <c:if test = "${messageEreur == 1}">

@@ -72,7 +72,7 @@ public class paiementServlet extends HttpServlet {
 				  response.sendRedirect( "LoginSuccess.jsp" );
 			
 			}else if(test==0 && request.getParameter("validerbtn")!=null){
-				String masterPath = request.getServletContext().getRealPath("/WEB-INF/Reçu.pdf" );
+				String masterPath = request.getServletContext().getRealPath("/WEB-INF/recu.pdf" );
 		        response.setContentType( "application/pdf" );
 		        loginBean.setStatus(1);
 		        loginDao.modifierUser(loginBean);

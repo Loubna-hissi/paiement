@@ -10,8 +10,13 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="Styles/main2.css">
 <title>Vue Agent</title>
+<SCRIPT type="text/javascript">
+    window.history.forward();
+    function noBack() { window.history.forward(); }
+</SCRIPT>
 </head>
-<body>
+<body onload="noBack();"
+    onpageshow="if (event.persisted) noBack();" onunload="">
        <div class="container">
    <fmt:message key="BienvenuAgent" var="BienvenuAgent" /> 
        <h2 align="center" style="color:red">${BienvenuAgent}</h2>
@@ -50,6 +55,12 @@
                   </c:forEach>
           
           </table> 
+          <div align="center" Style="margin-top:3%">
+          <form  method="post" action="Deconnexion">
+			<fmt:message key="deconnexion" var="deconnexion" /> 
+				<input type='submit' value='${deconnexion}' name="logout" class="form__button" style="margin-left:8px;background:red;width:20%">
+			</form>
+			</div>
       </div>
 </body>
 </html>

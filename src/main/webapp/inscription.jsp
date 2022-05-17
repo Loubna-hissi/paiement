@@ -51,11 +51,17 @@
         </form>
         <p class="form__text">
          </p>
-         <fmt:message key="login" var="login" />  
+         <fmt:message key="login" var="login" />
+          <form class="form" id="login" method="get" action="/login">
          <a href="login" style="text-decoration:none;color:green;text-size:bold">${login}</a>
+         </form>
          <fmt:message key="existeuser" var="existeuser" /> 
          <fmt:message key="passwordWrong" var="passwordWrong"/>  
+            <fmt:message key="creercompte" var="creercompte"/>  
         <c:set var = "messageInscription" scope = "session" value = "${messageInscription}"/>
+        <c:if test = "${messageInscription == 0}">
+         <p Style="color:red"><c:out value = "${creercompte}"/><p>
+        </c:if>
         <c:if test = "${messageInscription == 1}">
          <p Style="color:red"><c:out value = "${existeuser}"/><p>
         </c:if>

@@ -33,7 +33,7 @@
 			<form  method="post" action="Deconnexion">
 		
 			<fmt:message key="deconnexion" var="deconnexion" /> 
-				<input type='submit' value='${deconnexion}' name="logout" class="form__button" style="margin-left:8px;background:red">
+				<input type='submit' value='${deconnexion}' name="logout" class="form__button" style="margin-left:8px;background:red ">
 			</form>
 		</div>
 	</div>

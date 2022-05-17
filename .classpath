@@ -13,7 +13,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EclipseLink2.5.2">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/EclipseLink2.5.2">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 			<attribute name="owner.project.facets" value="jpt.jpa"/>
@@ -26,5 +26,6 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/smtp-1.4.4.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/javax.mail-1.6.2.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DELL/Downloads/ExamenHissiLoubnaJEE/ProjetHissiLoubnaJEE/JEELoubnaHissi/AppLoginJPA/src/main/webapp/WEB-INF/lib/eclipselink-2.5.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

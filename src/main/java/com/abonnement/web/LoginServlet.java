@@ -32,6 +32,11 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 HttpSession session1 = request.getSession( true );
+			session1.setAttribute( "messageEreur",0);
+			session1.setAttribute( "login",null);
+			session1.setAttribute( "password",null);
+		  
 		response.sendRedirect("Login.jsp");
 	}
 
@@ -39,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		String hrefinscription=request.getParameter("hrefinscription");
 		String username=request.getParameter("login");
 		String password=request.getParameter("password");
 		String DernierChiff=request.getParameter("dernierChiff");
@@ -79,7 +84,7 @@ public class LoginServlet extends HttpServlet {
 			else if(username==null && password==null && request.getParameter("btn")==null) {
 				session1.setAttribute( "messageEreur",0);
 				response.sendRedirect("Login.jsp");
-	    	}else {
+			}else {
 			HttpSession session = request.getSession( true );
 			session1.setAttribute( "messageEreur",1);
 			session1.setAttribute( "login",username);

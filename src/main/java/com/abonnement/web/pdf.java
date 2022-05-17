@@ -31,7 +31,7 @@ public class pdf extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String masterPath = request.getServletContext().getRealPath( "/WEB-INF/Reçu.pdf" );
+		String masterPath = request.getServletContext().getRealPath( "/WEB-INF/recu.pdf" );
 		response.setContentType("application/pdf");
 		response.addHeader("Content-Disposition", "attachment; filename=" +"Reçu.pdf" );
 		FileInputStream fileInputStream = new FileInputStream(masterPath );
